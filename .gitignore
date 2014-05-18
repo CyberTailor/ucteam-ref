@@ -1,0 +1,4 @@
+tmp/*
+assets/*.pdf
+assets/*.aux
+assets/*.log

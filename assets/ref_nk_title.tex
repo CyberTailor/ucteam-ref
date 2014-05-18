@@ -1,0 +1,37 @@
+\documentclass[a4page]{report}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T2A]{fontenc}
+    \usepackage[russian]{babel}
+    \usepackage{fullpage}
+    \usepackage{indentfirst}
+    \setlength{\parindent}{0pt}
+    \usepackage{textcomp}
+    \usepackage[normalem]{ulem}
+    \usepackage[ampersand]{easylist}
+    \newcommand{\beginEasyList}{
+        \begin{easylist}[enumerate]
+            \ListProperties(Numbers=a,Hide2=1,Hide3=1,Style*=,Mark=.,FinalMark={)},FinalMark1=.)
+    }
+    \newcommand{\eEasyList}{\end{easylist}}
+    \setcounter{secnumdepth}{-2}
+\begin{document}
+\begin{titlepage}
+    \center
+    \Large
+
+    Федеральное государственное автономное образовательное\\
+    учреждение высшего профессионального образования\\
+    «Уральский федеральный университет\\
+    имени первого Президента России Б. Н. Ельцина»\\
+    Специализированный учебно-научный центр\\
+
+    \vfill
+    \textbf{Реферативный обзор}\\
+    статей (19--45, 52, 80--81) Налогового кодекса РФ\\
+    $ofStudentOf$ 11 $group$ класса $name$\\
+
+    \vfill
+    {Екатеринбург}\\
+    {\the\year}\\
+\end{titlepage}
+\end{document}
