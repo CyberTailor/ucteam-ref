@@ -20,6 +20,8 @@
             width: 100%;
         }
     </style>
+    <meta property="vk:app_id" content="3939277">
+    <script src="//vk.com/js/api/openapi.js?105"></script>
 </head>
 <body>
     <div class="centered" style="width: 280px; height: 200px; line-height: 1.8">
@@ -54,6 +56,7 @@
                 <button type="submit" class="btn btn-default">Создать</button>
             </fieldset>
         </form>
+        <div style="padding-left: 25px; padding-top: 20px"><span id="vk_like"></span><script>VK.Widgets.Like('vk_like', { width: 250 }, 3000);</script></div>
     </div>
     <footer style="text-align: center; padding-top: 20px; padding-bottom: 20px">
         Пишите: <a href="mailto:mail@ucteam.ru?Subject=Генератор рефератов">mail@ucteam.ru</a>
