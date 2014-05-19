@@ -56,7 +56,7 @@
         </form>
     </div>
     <footer style="text-align: center; padding-top: 20px; padding-bottom: 20px">
-        Пишите: <a href="mailto:mail@ucteam.ru">mail@ucteam.ru</a>
+        Пишите: <a href="mailto:mail@ucteam.ru?Subject=Генератор рефератов">mail@ucteam.ru</a>
     </footer>
 </body>
 </html>
