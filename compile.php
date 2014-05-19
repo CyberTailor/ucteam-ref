@@ -50,9 +50,8 @@ function compile($code, $outfile) {
 }
 
 $what = $_REQUEST['what'];
-$rest_pdf = "assets/ref_${what}_rest.pdf";
 $template_tex = "assets/ref_${what}_title.tex";
-if (!preg_match('/^[a-z]+$/', $what) || !file_exists($rest_pdf) || !file_exists($template_tex)) {
+if (!preg_match('/^[a-z]+$/', $what) || !file_exists($template_tex)) {
     fatal_error("Not a codex: ${what}");
 }
 
@@ -75,7 +74,9 @@ if (!file_exists($result_pdf)) {
     $title_pdf = mktemp('compile');
     compile($title_code, $title_pdf);
 
-    shell_exec("gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$result_pdf $title_pdf $rest_pdf");
+    $rest_pdf = "assets/ref_${what}_rest.pdf";
+    $pdfmarks = "assets/ref_${what}_pdfmarks";
+    shell_exec("gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$result_pdf $title_pdf $rest_pdf $pdfmarks");
     unlink($title_pdf);
 }
 
