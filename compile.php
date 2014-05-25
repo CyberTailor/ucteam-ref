@@ -65,7 +65,7 @@ $data = array(
 );
 
 $data_hash = substr(md5(json_encode($data)), 0, 8);
-$result_pdf = "results/referat_${what}_${data_hash}.pdf";
+$result_pdf = "results/${data_hash}_${what}.pdf";
 $result_url = "${data_hash}/referat_${what}.pdf";
 
 if (!file_exists($result_pdf)) {

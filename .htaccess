@@ -2,4 +2,4 @@ RewriteEngine on
 RewriteBase /ref/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(\w+)/(referat_\w+).pdf$ results/$2_$1.pdf [L,QSA]
+RewriteRule ^(\w+)/referat_(\w+).pdf$ results/$1_$2.pdf [L,QSA]
