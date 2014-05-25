@@ -66,6 +66,7 @@ $data = array(
 
 $data_hash = substr(md5(json_encode($data)), 0, 8);
 $result_pdf = "results/referat_${what}_${data_hash}.pdf";
+$result_url = "${data_hash}/referat_${what}.pdf";
 
 if (!file_exists($result_pdf)) {
     $title_code = file_get_contents($template_tex);
@@ -80,4 +81,4 @@ if (!file_exists($result_pdf)) {
     unlink($title_pdf);
 }
 
-redirect($result_pdf);
+redirect($result_url);
