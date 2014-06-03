@@ -11,7 +11,7 @@ function fatal_error($message) {
 }
 
 function redirect($url, $status_code = 303) {
-   header("Location: ${url}", true, $status_code);
+   header("Location: $url", true, $status_code);
    die;
 }
 
@@ -44,15 +44,15 @@ function compile($code, $outfile) {
     if ($response['error']) {
         fatal_error(var_export($response, true));
     }
-    $url = "http://sciencesoft.at/image/latex/latex.pdf?index=${response['idx']}&id=${response['id']}";
+    $url = "http://sciencesoft.at/image/latex/latex.pdf?index={$response['idx']}&id={$response['id']}";
     $result = file_get_contents($url);
     file_put_contents($outfile, $result);
 }
 
 $what = $_REQUEST['what'];
-$template_tex = "assets/ref_${what}_title.tex";
+$template_tex = "assets/ref_{$what}_title.tex";
 if (!preg_match('/^[a-z]+$/', $what) || !file_exists($template_tex)) {
-    fatal_error("Not a codex: ${what}");
+    fatal_error("Not a codex: $what");
 }
 
 $group = strval($_REQUEST['group']);
@@ -65,8 +65,8 @@ $data = array(
 );
 
 $data_hash = substr(md5(json_encode($data)), 0, 8);
-$result_pdf = "results/${data_hash}_${what}.pdf";
-$result_url = "${data_hash}/referat_${what}.pdf";
+$result_pdf = "results/{$data_hash}_{$what}.pdf";
+$result_url = "{$data_hash}/referat_{$what}.pdf";
 
 if (!file_exists($result_pdf)) {
     $title_code = file_get_contents($template_tex);
@@ -75,8 +75,8 @@ if (!file_exists($result_pdf)) {
     $title_pdf = mktemp('compile');
     compile($title_code, $title_pdf);
 
-    $rest_pdf = "assets/ref_${what}_rest.pdf";
-    $pdfmarks = "assets/ref_${what}_pdfmarks";
+    $rest_pdf = "assets/ref_{$what}_rest.pdf";
+    $pdfmarks = "assets/ref_{$what}_pdfmarks";
     shell_exec("gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$result_pdf $title_pdf $rest_pdf $pdfmarks");
     unlink($title_pdf);
 }
