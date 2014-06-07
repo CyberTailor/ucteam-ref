@@ -4,6 +4,8 @@ function fatal_error($message) {
     file_put_contents(mktemp('report'),
         date('m-d H:i:s') . ' ' . $_SERVER['REMOTE_ADDR'] . "\n" .
         print_r(array('_REQUEST' => $_REQUEST, '_SERVER' => $_SERVER), true) . "\n\n" . $message);
+    echo 'Произошла ошибка. Попробуйте снова или напишите нам на <a href="mailto:mail@ucteam.ru">mail@ucteam.ru</a>.';
+    echo "<br><br>Информация об ошибке:<br>\n";
     echo $message;
     die;
 }
