@@ -38,20 +38,9 @@
                     <option value="f">учащейся</option>
                     <option value="m" selected>учащегося</option>
                 </select>
-                11
-                <select name="group">
-                    <option value="А">А</option>
-                    <option value="Б">Б</option>
-                    <option value="В">В</option>
-                    <option value="Г">Г</option>
-                    <option value="Е">Е</option>
-                    <option value="З" selected>З</option>
-                    <option value="И">И</option>
-                    <option value="К">К</option>
-                    <option value="Л">Л</option>
-                    <option value="М">М</option>
-                </select> класса
-                <input type="text" name="name" style="width: 100%" placeholder="Путимцева Ивана Дмитриевича">
+                <input name="group" type="text" style="width: 30px" maxlength="4" value="11 З"> класса
+                <br>
+                <input name="name" type="text" style="width: 210px" placeholder="Путимцева Ивана Дмитриевича">
                 <br>
                 <button type="submit" class="btn btn-default">Создать</button>
             </fieldset>
