@@ -10,8 +10,13 @@ function fatal_error($message) {
     die;
 }
 
+function redirect($url, $status_code = 303) {
+   header("Location: ${url}", true, $status_code);
+   die;
+}
+
 function mktemp($pref) {
-    return tempnam('./tmp', $pref);
+    return tempnam('tmp', $pref);
 }
 
 function compile($code, $outfile) {
@@ -52,7 +57,7 @@ if (!preg_match('/^[a-z]+$/', $what) || !file_exists($rest_pdf) || !file_exists(
 }
 
 $group = strval($_REQUEST['group']);
-$name = !empty($_REQUEST['name']) ? strval($_REQUEST['name']) : "Путимцева Ивана Дмитриевича";
+$name = !empty($_REQUEST['name']) ? strval($_REQUEST['name']) : 'Путимцева Ивана Дмитриевича';
 
 $data = array(
     '$ofStudentOf$' => $_REQUEST['sex'] === 'f' ? 'учащейся' : 'учащегося',
@@ -60,23 +65,18 @@ $data = array(
     '$name$'        => $name,
 );
 
-$title_pdf = mktemp('compile');
-$result_pdf = mktemp('compile');
+$data_hash = substr(md5(json_encode($data)), 0, 8);
+$result_pdf = "results/referat_${what}_${data_hash}.pdf";
 
-$code = file_get_contents($template_tex);
-$code = str_replace(array_keys($data), array_values($data), $code);
-compile($code, $title_pdf);
+if (!file_exists($result_pdf)) {
+    $title_code = file_get_contents($template_tex);
+    $title_code = str_replace(array_keys($data), array_values($data), $title_code);
 
-shell_exec("gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$result_pdf $title_pdf $rest_pdf");
+    $title_pdf = mktemp('compile');
+    compile($title_code, $title_pdf);
 
-header('Content-Description: File Transfer');
-header('Content-Type: application/pdf');
-header('Content-Transfer-Encoding: binary');
-header("Content-Disposition: inline; filename=referat_${what}.pdf");
-header('Content-Length: ' . filesize($result_pdf));
-header('Cache-Control: must-revalidate, post-check=0, pre-check=0, max-age=0');
-header('Pragma: no-cache');
-readfile($result_pdf);
+    shell_exec("gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$result_pdf $title_pdf $rest_pdf");
+    unlink($title_pdf);
+}
 
-unlink($title_pdf);
-unlink($result_pdf);
+redirect($result_pdf);
