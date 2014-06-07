@@ -13,6 +13,12 @@
             right: 0;
             margin: auto;
         }
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -49,5 +55,8 @@
             </fieldset>
         </form>
     </div>
+    <footer style="text-align: center; padding-top: 20px; padding-bottom: 20px">
+        Пишите: <a href="mailto:mail@ucteam.ru">mail@ucteam.ru</a>
+    </footer>
 </body>
 </html>
