@@ -49,10 +49,13 @@ if (!preg_match('/^[a-z]+$/', $what) || !file_exists($rest_pdf) || !file_exists(
     fatal_error("Not a codex: ${what}");
 }
 
+$group = strval($_REQUEST['group']);
+$name = !empty($_REQUEST['name']) ? strval($_REQUEST['name']) : "Путимцева Ивана Дмитриевича";
+
 $data = array(
     '$ofStudentOf$' => $_REQUEST['sex'] === 'f' ? 'учащейся' : 'учащегося',
-    '$group$'       => strval($_REQUEST['group']),
-    '$name$'        => strval($_REQUEST['name']),
+    '$group$'       => $group,
+    '$name$'        => $name,
 );
 
 $title_pdf = mktemp('compile');
