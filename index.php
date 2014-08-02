@@ -22,6 +22,7 @@
     </style>
     <meta property="vk:app_id" content="3939277">
     <script src="//vk.com/js/api/openapi.js?105"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="centered" style="width: 280px; height: 200px; line-height: 1.8">
@@ -42,13 +43,14 @@
                 <br>
                 <input name="name" type="text" style="width: 210px" placeholder="Путимцева Ивана Дмитриевича">
                 <br>
-                <button type="submit" class="btn btn-default">Создать</button>
+                <button type="submit" style="width: 80px; height: 30px">Создать</button>
             </fieldset>
         </form>
         <div style="padding-left: 25px; padding-top: 20px"><span id="vk_like"></span><script>VK.Widgets.Like('vk_like', { width: 250 }, 3000);</script></div>
     </div>
     <footer style="text-align: center; padding-top: 20px; padding-bottom: 20px">
-        Пишите: <a href="mailto:mail@ucteam.ru?Subject=Генератор рефератов">mail@ucteam.ru</a>
+        <a href="mailto:mail@ucteam.ru?Subject=Генератор рефератов"><i class="fa fa-envelope-o fa-lg" style="color:#000"></i></a>
+        &nbsp;<a href="https://github.com/slava-sh/ucteam-ref"><i class="fa fa-github fa-lg" style="color:#000"></i></a>
     </footer>
     <!-- Yandex.Metrika counter --><script type="text/javascript">var yaParams = { page: 'ref' };</script><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter22576558 = new Ya.Metrika({id:22576558, clickmap:true, accurateTrackBounce:true,params:window.yaParams||{ }}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/22576558" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 </body>
