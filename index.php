@@ -7,6 +7,9 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
+        body {
+            background-color: #f9f9f9;
+        }
         #form {
             position: absolute;
             top: 0;
