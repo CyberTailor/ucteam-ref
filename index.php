@@ -34,6 +34,9 @@
         #form button[type="submit"] {
             margin-top: 3px;
         }
+        #example {
+            display: none;
+        }
         #vk_like {
             padding-left: 15px;
         }
@@ -58,6 +61,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3>Реферативный обзор</h3>
+                    <p id="example">Гражданского кодекса РФ учащегося 11 З класса Путимцева Ивана Дмитриевича</p>
                     <div class="form-group">
                         <select name="what" class="form-control">
                             <option value="gk">Гражданского</option>
