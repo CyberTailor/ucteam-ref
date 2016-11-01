@@ -2,6 +2,5 @@ tmp/*
 !tmp/.htaccess
 results/*
 !results/.gitkeep
-assets/*.pdf
 assets/*.aux
 assets/*.log
