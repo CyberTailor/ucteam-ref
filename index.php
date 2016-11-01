@@ -61,7 +61,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3>Реферативный обзор</h3>
-                    <p id="example">Гражданского кодекса РФ учащегося 11 З класса Путимцева Ивана Дмитриевича</p>
+                    <p id="example">Гражданского кодекса РФ обучающегося 11 З класса Путимцева И. Д.</p>
                     <div class="form-group">
                         <select name="what" class="form-control">
                             <option value="gk">Гражданского</option>
@@ -70,12 +70,12 @@
                     </div>
                     <div class="form-group">
                         <select name="sex" class="form-control">
-                            <option value="f">учащейся</option>
-                            <option value="m" selected>учащегося</option>
+                            <option value="f">обучающейся</option>
+                            <option value="m" selected>обучающегося</option>
                         </select>
                         <input name="group" type="text" class="form-control" maxlength="4" value="11 З"> класса
                     </div>
-                    <input name="name" type="text" class="form-control" placeholder="Путимцева Ивана Дмитриевича">
+                    <input name="name" type="text" class="form-control" placeholder="Путимцева И. Д.">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Создать</button>
                 </div>
             </div>

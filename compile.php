@@ -56,10 +56,10 @@ if (!preg_match('/^[a-z]+$/', $what) || !file_exists($template_tex)) {
 }
 
 $group = strval($_REQUEST['group']);
-$name = !empty($_REQUEST['name']) ? strval($_REQUEST['name']) : 'Путимцева Ивана Дмитриевича';
+$name = !empty($_REQUEST['name']) ? strval($_REQUEST['name']) : 'Путимцева И. Д.';
 
 $data = array(
-    '$ofStudentOf$' => $_REQUEST['sex'] === 'f' ? 'учащейся' : 'учащегося',
+    '$ofStudentOf$' => $_REQUEST['sex'] === 'f' ? 'обучающейся' : 'обучающегося',
     '$group$'       => $group,
     '$name$'        => $name,
 );
